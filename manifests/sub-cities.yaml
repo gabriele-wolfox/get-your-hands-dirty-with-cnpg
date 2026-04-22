@@ -1,0 +1,11 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Subscription
+metadata:
+  name: sub-cities
+spec:
+  name: sub_cities
+  dbname: workshop
+  cluster:
+    name: cluster-example
+  publicationName: pub_cities
+  externalClusterName: cluster-example-backup

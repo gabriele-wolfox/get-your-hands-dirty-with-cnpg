@@ -1,0 +1,9 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: workshop-db-target
+spec:
+  name: workshop
+  owner: app
+  cluster:
+    name: cluster-example

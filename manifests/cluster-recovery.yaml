@@ -1,0 +1,20 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: cluster-recovery
+spec:
+  instances: 3
+  storage:
+    size: 1Gi
+
+  bootstrap:
+    recovery:
+      source: cluster-example-backup
+
+  externalClusters:
+  - name: cluster-example-backup
+    plugin:
+      name: barman-cloud.cloudnative-pg.io
+      parameters:
+        barmanObjectName: objectstore-eu
+        serverName: cluster-example-backup

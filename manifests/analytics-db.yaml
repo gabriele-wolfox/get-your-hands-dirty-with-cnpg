@@ -1,0 +1,12 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Database
+metadata:
+  name: analytics-db
+spec:
+  name: analytics
+  owner: app
+  cluster:
+    name: cluster-example
+  extensions:
+    - name: pg_stat_statements
+    - name: btree_gist

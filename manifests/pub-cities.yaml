@@ -1,0 +1,11 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Publication
+metadata:
+  name: pub-cities
+spec:
+  name: pub_cities
+  dbname: workshop
+  cluster:
+    name: cluster-example-backup
+  target:
+    allTables: true
